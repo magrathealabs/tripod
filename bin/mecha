@@ -6,15 +6,12 @@ require 'slop'
 require 'mecha'
 
 Mecha.opts = Slop.parse do |o|
-  o.bool '-sd', '--skip-devise', 'skip Devise install and config'
+  o.bool '-d', '--devise', 'Install and config Devise'
   o.on '--version', 'print the version' do
     puts Mecha::VERSION
     exit
   end
 end
-
-puts Mecha.opts.class
-puts Mecha.opts.inspect
 
 Mecha.config_templates_path
 Mecha::AppGenerator.start

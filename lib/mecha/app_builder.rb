@@ -19,7 +19,7 @@ module Mecha
     end
 
     def config_devise
-      return if Mecha.opts.skip_devise?
+      return unless Mecha.opts.devise?
       say('Installing devise from generator', :yellow)
       system('rails generate devise:install')
       inject_into_file(
