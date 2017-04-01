@@ -4,15 +4,19 @@ Rails:
 AllCops:
   Exclude:
     - 'db/schema.rb'
+    - 'bin/**'
     - 'vendor/**/*'
     - 'tmp/**/*'
+    - 'Guardfile'
+    - 'config/**/*'
+    - 'lib/tasks/*.rake'
 
 Documentation:
   Enabled: false
 
 Metrics/AbcSize:
   Exclude:
-    - 'db/migrate/*'
+    - 'db/**/*'
 
 Metrics/BlockLength:
   Exclude:
@@ -22,6 +26,11 @@ Metrics/BlockLength:
 
 Metrics/ClassLength:
   Exclude:
+    - 'test/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'db/migrate/**'
     - 'test/**/*'
 
 Metrics/LineLength:
