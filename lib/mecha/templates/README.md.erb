@@ -8,7 +8,7 @@
 
 ## Dependencies
 
-- Ruby 2.3.3
+- Ruby <%= Mecha::RUBY_VERSION %>
 - PostgreSQL 9.6.1
 - PhantomJS 1.8.1
 
@@ -60,7 +60,13 @@ open coverage/index.html
 
 ## Staging
 
-TODO:
+We're using Heroku as Staging environment. Take a look in the
+[documentation](https://devcenter.heroku.com/articles/getting-started-with-rails5) to setup Heroku in your machine.
+
+```sh
+git push heroku master
+heroku run rake db:migrate
+```
 
 ## Style
 
