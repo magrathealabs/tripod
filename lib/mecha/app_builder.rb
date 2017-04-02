@@ -1,21 +1,7 @@
 module Mecha
   class AppBuilder < Rails::AppBuilder
     def config_application
-      inject_into_class('config/application.rb', 'Application') do
-        <<-DOC
-    config.assets.initialize_on_precompile = false
-    config.autoload_paths += %W(\#{config.root}/lib \#{config.root}/app/uploaders \#{config.root}/services)
-    config.i18n.default_locale = :'pt-BR'
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    config.generators do |g|
-      g.view_specs    false
-      g.routing_specs false
-      g.stylesheets   false
-      g.javascripts   false
-      g.helper        false
-    end
-        DOC
-      end
+      inject_into_class('config/application.rb', 'Application') { inject_to_application_rb }
     end
 
     def config_devise
@@ -43,8 +29,8 @@ module Mecha
     end
 
     def database_yml
-      template "config/databases/#{options[:database]}.yml", 'config/database.example.yml'
-      template "config/databases/#{options[:database]}.yml", 'config/database.yml'
+      template "config/databases/#{options[:database]}.yml.erb", 'config/database.example.yml'
+      template "config/databases/#{options[:database]}.yml.erb", 'config/database.yml'
     end
 
     def gemfile
@@ -82,6 +68,22 @@ module Mecha
     end
 
     private
+
+    def inject_to_application_rb
+      <<-DOC
+    config.assets.initialize_on_precompile = false
+    config.autoload_paths += %W(\#{config.root}/lib \#{config.root}/app/uploaders \#{config.root}/services)
+    config.i18n.default_locale = :'pt-BR'
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.generators do |g|
+      g.view_specs    false
+      g.routing_specs false
+      g.stylesheets   false
+      g.javascripts   false
+      g.helper        false
+    end
+      DOC
+    end
 
     def append_to_gitignore
       <<-DOC.strip_heredoc

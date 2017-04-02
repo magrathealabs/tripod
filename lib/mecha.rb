@@ -1,4 +1,5 @@
 require 'mecha/version'
+require 'mecha/support/string'
 require 'mecha/generators/app_generator'
 require 'mecha/app_builder'
 
