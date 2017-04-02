@@ -4,9 +4,15 @@ module Mecha
       inject_into_class('config/application.rb', 'Application') { inject_to_application_rb }
     end
 
+    def config_bitbucket_pipelines
+      return unless Mecha.opts.bitbucket_pipelines?
+      say('Config Bitbucket Pipelines', :green)
+      template('bitbucket-pipelines.yml.erb', 'bitbucket-pipelines.yml')
+    end
+
     def config_devise
       return unless Mecha.opts.devise?
-      say('Installing devise from generator', :yellow)
+      say('Installing devise from generator', :green)
       system('rails generate devise:install')
       inject_into_file(
         'config/environments/development.rb',
@@ -60,6 +66,7 @@ module Mecha
 
     def leftovers
       config_application
+      config_bitbucket_pipelines
       config_devise
       config_guardfile
       config_rubocop
