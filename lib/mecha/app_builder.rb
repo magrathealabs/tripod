@@ -22,6 +22,14 @@ module Mecha
       )
     end
 
+    def config_guardfile
+      copy_file('Guardfile', 'Guardfile')
+    end
+
+    def config_rubocop
+      copy_file('rubocop.yml', '.rubocop.yml')
+    end
+
     def config_test
       copy_file('test_helper.rb', 'test/test_helper.rb', force: true)
       empty_directory_with_keep_file('test/factories')
@@ -42,16 +50,8 @@ module Mecha
       @generator.append_file('.gitignore', append_to_gitignore)
     end
 
-    def guardfile
-      copy_file('Guardfile', 'Guardfile')
-    end
-
     def readme
       template('README.md.erb', 'README.md')
-    end
-
-    def rubocop
-      copy_file('rubocop.yml', '.rubocop.yml')
     end
 
     def config_simplecov
@@ -59,10 +59,10 @@ module Mecha
     end
 
     def leftovers
-      guardfile
-      rubocop
       config_application
       config_devise
+      config_guardfile
+      config_rubocop
       config_simplecov
       config_test
     end

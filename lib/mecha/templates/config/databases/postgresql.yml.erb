@@ -18,8 +18,8 @@ test:
   host: localhost
   timeout: 5000
   database: <%= app_name.underscore %>_test
-  username: <%%= ENV['POSTGRESQL_USERNAME'] || 'postgres' %>
-  password: <%%= ENV['POSTGRESQL_PASSWORD'] || '' %>
+  username: <%= app_name.underscore %>_test
+  password: <%= app_name.underscore %>_test
   template: template0
 
 production:

@@ -26,7 +26,13 @@ This will create a Rails app with name `<projectname>` and add all our defaults.
 
 ## Development
 
-TODO:
+Run `rake test` or simply just `rake` to run tests.
+
+To install Mecha in your local environment run:
+
+```bash
+rake install
+```
 
 ## Contributing
 
