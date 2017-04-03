@@ -14,7 +14,7 @@ Mecha.opts = Slop.parse do |o|
   end
   o.on '--help', 'list options' do
     puts o
-    exit0
+    exit
   end
 end
 

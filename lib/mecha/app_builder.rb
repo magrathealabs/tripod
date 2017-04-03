@@ -45,6 +45,7 @@ module Mecha
     def database_yml
       template "config/databases/#{options[:database]}.yml.erb", 'config/database.example.yml'
       template "config/databases/#{options[:database]}.yml.erb", 'config/database.yml'
+      template "config/databases/#{options[:database]}.ci.yml.erb", 'config/database.ci.yml'
     end
 
     def gemfile

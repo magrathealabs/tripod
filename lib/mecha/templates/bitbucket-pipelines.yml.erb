@@ -10,10 +10,10 @@ pipelines:
           - /etc/init.d/postgresql start
           - sudo -u postgres sh -c 'createuser <%= app_name.underscore %>_test & createdb <%= app_name.underscore %>_test'
           - sudo -u postgres psql -c "ALTER USER <%= app_name.underscore %>_test PASSWORD '<%= app_name.underscore %>_test' CREATEDB SUPERUSER;"
-          - cp config/database.yml.example config/database.yml
+          - cp config/database.ci.yml config/database.yml
           - apt-get update -yqqq
           - apt-get -qq -y --force-yes install apt-utils bzip2 nodejs-legacy npm
           - npm install -g phantomjs-prebuilt
           - bundle install --jobs $(nproc)
-          - bundle exec rake db:schema:load RAILS_ENV=test
-          - bundle exec rake test
+          - bundle exec rails db:schema:load RAILS_ENV=test
+          - bundle exec rails test
