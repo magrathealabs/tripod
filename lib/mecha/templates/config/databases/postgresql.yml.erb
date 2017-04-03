@@ -18,12 +18,9 @@ test:
   host: localhost
   timeout: 5000
   database: <%= app_name.underscore %>_test
-  username: <%= app_name.underscore %>_test
-  password: <%= app_name.underscore %>_test
-  template: template0
 
 production:
   <<: *default
   database: <%= app_name.underscore %>_production
   username: <%= app_name.underscore %>
-  password: <%%= ENV['KAVO_DATABASE_PASSWORD'] %>
+  password: <%%= ENV['POSTGRESQL_PASSWORD'] %>

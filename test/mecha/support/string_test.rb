@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MechaTest < Minitest::Test
+class StringTest < Minitest::Test
   test 'from camelcase' do
     assert_equal 'snake_case', 'SnakeCase'.underscore
   end
