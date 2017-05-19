@@ -11,6 +11,7 @@ require 'mecha/generators/tests/tests_generator'
 require 'mecha/generators/bitbucket_pipelines/bitbucket_pipelines_generator'
 require 'mecha/generators/devise/devise_generator'
 require 'mecha/generators/sentry/sentry_generator'
+require 'mecha/generators/cpf_cnpj/cpf_cnpj_generator'
 
 module Mecha
   def self.opts
@@ -19,6 +20,7 @@ module Mecha
       o.bool '--devise', 'install and config Devise'
       o.bool '--sentry', 'install and config Sentry'
       o.bool '--simplecov', 'install and config Simplecov'
+      o.bool '--cpf_cnpj', 'install and config CPF/CNPJ'
       o.on '--version', 'print the gem version' do
         puts Mecha::VERSION
         exit
@@ -41,5 +43,6 @@ module Mecha
     Mecha::Generators::BitbucketPipelinesGenerator.start if Mecha.opts.bitbucket_pipelines?
     Mecha::Generators::DeviseGenerator.start if Mecha.opts.devise?
     Mecha::Generators::SentryGenerator.start if Mecha.opts.sentry?
+    Mecha::Generators::CpfCnpjGenerator.start if Mecha.opts.cpf_cnpj?
   end
 end
