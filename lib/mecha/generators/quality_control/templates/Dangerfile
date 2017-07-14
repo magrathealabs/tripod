@@ -58,3 +58,11 @@ That's OK as long as you're refactoring existing code.
 
   warn(message.strip)
 end
+
+<% if Mecha.opts.simplecov? %>
+
+# CODE COVERAGE
+
+simplecov.report('coverage/coverage.json')
+
+<% end %>

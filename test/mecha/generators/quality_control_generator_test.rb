@@ -15,14 +15,6 @@ module Mecha
         assert_file 'Gemfile', /gem 'danger'/
         assert_file 'Gemfile', /gem 'pronto'/
       end
-
-      # test 'default installation does not add simplecov gems' do
-      #   create_gemfile
-      #   run_generator
-
-      #   assert_file 'Gemfile', /gem 'danger-simplecov_json'/
-      #   assert_file 'Gemfile', /gem 'pronto-simplecov'/
-      # end
     end
   end
 end

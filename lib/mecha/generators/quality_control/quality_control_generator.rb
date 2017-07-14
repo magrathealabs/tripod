@@ -18,6 +18,7 @@ module Mecha
           gem 'danger'
           gem 'danger-github_ext'
           gem 'danger-todoist'
+          gem 'gem danger-simplecov_json' if Mecha.opts.simplecov?
         end
       end
 
@@ -31,6 +32,7 @@ module Mecha
           gem 'pronto-rails_schema', require: false
           gem 'pronto-reek', require: false
           gem 'pronto-rubocop', require: false
+          gem('pronto-simplecov', require: false) if Mecha.opts.simplecov?
         end
       end
     end
