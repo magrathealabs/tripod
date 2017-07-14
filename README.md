@@ -43,6 +43,10 @@ variable with you DSN key. `ENV['DNS']`.
 
 `--simplecov` installs Simplecov and adds configs to `test/test_helper.rb`.
 
+**Quality Control**
+
+Enables danger and pronto gems by default. If simplecov is installed danger-simplecov_json and pronto-simplecov gems are also installed.
+
 ## Development
 
 Run `rake test` or simply just `rake` to run tests.

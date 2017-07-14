@@ -8,7 +8,6 @@ module Mecha
       class_option :database, type: 'string', default: 'postgresql', aliases: '-d'
 
       def copy_bitbucket_pipelines
-        puts(options)
         template("config/databases/#{options[:database]}.bitbucket.yml.erb", 'config/database.bitbucket.yml')
         template('bitbucket-pipelines.yml.erb', 'bitbucket-pipelines.yml')
       end

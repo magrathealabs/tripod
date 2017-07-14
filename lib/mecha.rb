@@ -12,6 +12,7 @@ require 'mecha/generators/bitbucket_pipelines/bitbucket_pipelines_generator'
 require 'mecha/generators/devise/devise_generator'
 require 'mecha/generators/sentry/sentry_generator'
 require 'mecha/generators/cpf_cnpj/cpf_cnpj_generator'
+require 'mecha/generators/quality_control/quality_control_generator'
 
 module Mecha
   def self.opts
@@ -44,5 +45,6 @@ module Mecha
     Mecha::Generators::DeviseGenerator.start if Mecha.opts.devise?
     Mecha::Generators::SentryGenerator.start if Mecha.opts.sentry?
     Mecha::Generators::CpfCnpjGenerator.start if Mecha.opts.cpf_cnpj?
+    Mecha::Generators::QualityControlGenerator.start
   end
 end
