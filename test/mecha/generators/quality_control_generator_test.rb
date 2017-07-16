@@ -15,6 +15,16 @@ module Mecha
         assert_file 'Gemfile', /gem 'danger'/
         assert_file 'Gemfile', /gem 'pronto'/
       end
+
+      test 'installs simplecov related gems if simplecov is select' do
+        # create_gemfile
+
+        # puts(Mecha.opts[:simplecov])
+
+        # puts(run_generator)
+
+        # puts('is possible to use this') if !Mecha.opts[:simplecov]
+      end
     end
   end
 end

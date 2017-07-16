@@ -17,8 +17,8 @@ module Mecha
         gem_group :development, :test do
           gem 'danger'
           gem 'danger-github_ext'
+          gem 'danger-simplecov_json' if Mecha.opts.simplecov?
           gem 'danger-todoist'
-          gem 'gem danger-simplecov_json' if Mecha.opts.simplecov?
         end
       end
 
