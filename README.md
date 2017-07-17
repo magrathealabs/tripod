@@ -47,6 +47,8 @@ variable with you DSN key. `ENV['DNS']`.
 
 Enables danger and pronto gems by default. If simplecov is installed danger-simplecov_json and pronto-simplecov gems are also installed.
 
+####Be sure to set up your Dangerfile to use the environment variables of your project.
+
 ## Development
 
 Run `rake test` or simply just `rake` to run tests.
