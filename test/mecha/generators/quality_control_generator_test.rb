@@ -16,15 +16,33 @@ module Mecha
         assert_file 'Gemfile', /gem 'pronto'/
       end
 
-      test 'installs simplecov related gems if simplecov is select' do
+      test 'default installation does not install simplecov gems' do
+        create_gemfile
+        run_generator
+
+        file = File.open("#{destination_root}/Gemfile", 'rt')
+        contents = file.read
+
+        assert_no_match(/gem 'danger-simplecov_json'/, contents)
+        assert_no_match(/gem 'pronto-simplecov'/, contents)
+
+        file.close
+      end
+
+      test 'custom installation with simplecov installs related gems' do
         # create_gemfile
+        # run_generator
 
-        # puts(Mecha.opts[:simplecov])
+        # # puts(Mecha.opts[:simplecov])
 
-        # puts(run_generator)
+        # # puts(Mecha.opts[:simplecov] = true)
 
-        # puts('is possible to use this') if !Mecha.opts[:simplecov]
+        # # puts(Mecha.opts[:simplecov])
+
+        # assert_file 'Gemfile', /gem 'danger-simplecov_json'/
+        # assert_file 'Gemfile', /gem 'pronto-simplecov'/
       end
     end
   end
 end
+
