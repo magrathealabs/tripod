@@ -30,19 +30,12 @@ module Mecha
       end
 
       test 'custom installation with simplecov installs related gems' do
-        # create_gemfile
-        # run_generator
+        create_gemfile
+        run_generator(['--simplecov'])
 
-        # # puts(Mecha.opts[:simplecov])
-
-        # # puts(Mecha.opts[:simplecov] = true)
-
-        # # puts(Mecha.opts[:simplecov])
-
-        # assert_file 'Gemfile', /gem 'danger-simplecov_json'/
-        # assert_file 'Gemfile', /gem 'pronto-simplecov'/
+        assert_file 'Gemfile', /gem 'danger-simplecov_json'/
+        assert_file 'Gemfile', /gem 'pronto-simplecov'/
       end
     end
   end
 end
-

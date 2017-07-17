@@ -45,6 +45,8 @@ module Mecha
     Mecha::Generators::DeviseGenerator.start if Mecha.opts.devise?
     Mecha::Generators::SentryGenerator.start if Mecha.opts.sentry?
     Mecha::Generators::CpfCnpjGenerator.start if Mecha.opts.cpf_cnpj?
-    Mecha::Generators::QualityControlGenerator.start
+    args = []
+    args << '--simplecov' if Mecha.opts.simplecov?
+    Mecha::Generators::QualityControlGenerator.start(args)
   end
 end

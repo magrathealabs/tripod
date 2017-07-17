@@ -5,6 +5,8 @@ module Mecha
     class QualityControlGenerator < Rails::Generators::Base
       source_root File.join(File.dirname(__FILE__), 'templates')
 
+      class_option :simplecov, type: 'boolean', default: false
+
       def copy_reek
         copy_file('reek', '.reek')
       end
@@ -17,7 +19,7 @@ module Mecha
         gem_group :development, :test do
           gem 'danger'
           gem 'danger-github_ext'
-          gem 'danger-simplecov_json' if Mecha.opts.simplecov?
+          gem 'danger-simplecov_json' if options[:simplecov]
           gem 'danger-todoist'
         end
       end
@@ -32,7 +34,7 @@ module Mecha
           gem 'pronto-rails_schema', require: false
           gem 'pronto-reek', require: false
           gem 'pronto-rubocop', require: false
-          gem('pronto-simplecov', require: false) if Mecha.opts.simplecov?
+          gem('pronto-simplecov', require: false) if options[:simplecov]
         end
       end
     end
