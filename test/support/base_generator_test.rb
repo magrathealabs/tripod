@@ -77,6 +77,13 @@ class BaseGeneratorTest < Rails::Generators::TestCase
     out_file.close
   end
 
+  def create_config_routes_file
+    create_dir('config/')
+    out_file = new_file('config/routes.rb')
+    out_file.puts("Rails.application.routes.draw do\nend")
+    out_file.close
+  end
+
   def create_file(filepath)
     new_file(filepath).close
   end
