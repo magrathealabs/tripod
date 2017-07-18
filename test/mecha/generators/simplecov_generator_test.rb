@@ -11,8 +11,10 @@ module Mecha
         create_test_dir
         run_generator
 
-        assert_file '.simplecov', /SimpleCov.start do/
+        assert_file 'Gemfile', /gem 'simplecov'/
+        assert_file 'Gemfile', /gem 'simplecov-json'/
         assert_file 'test/test_helper.rb', /require 'simplecov'/
+        assert_file 'test/test_helper.rb', /require 'simplecov-json'/
       end
     end
   end
