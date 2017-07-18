@@ -61,7 +61,7 @@ module Mecha
           end
         ROUTES
 
-        gsub_file('config/routes.rb', /devise_for :users/, routes)
+        inject_into_file('config/routes.rb', routes, after: "Rails.application.routes.draw do\n")
       end
 
       private
