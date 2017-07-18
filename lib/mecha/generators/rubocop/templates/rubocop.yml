@@ -1,6 +1,9 @@
 Rails:
   Enabled: true
 
+Rails/NotNullColumn:
+  Enabled: false
+
 AllCops:
   Exclude:
     - 'db/schema.rb'
@@ -10,6 +13,7 @@ AllCops:
     - 'Guardfile'
     - 'config/**/*'
     - 'lib/tasks/*.rake'
+    - 'Dangerfile'
 
 Documentation:
   Enabled: false
@@ -17,6 +21,7 @@ Documentation:
 Metrics/AbcSize:
   Exclude:
     - 'db/**/*'
+    - 'test/support/pages/leads/show.rb'
 
 Metrics/BlockLength:
   Exclude:
@@ -34,7 +39,7 @@ Metrics/BlockLength:
     - 'test/**/*'
 
 Metrics/LineLength:
-  Max: 120
+  Max: 130
 
 Metrics/MethodLength:
   Exclude:
@@ -45,3 +50,8 @@ Style/ClassAndModuleChildren:
   EnforcedStyle: nested
   Exclude:
     - 'test/test_helper.rb'
+
+Style/PredicateName:
+  Exclude:
+    - 'test/support/pages/**/*'
+    - 'test/support/page_components/**/*'
