@@ -28,6 +28,22 @@ module Mecha
           gem('pronto-simplecov', require: false) if options[:simplecov]
         end
       end
+
+      def say_config_message
+        message = <<-MESSAGE.strip_heredoc
+          If you want to use Pronto in your CI, please config the needed environment variables. Bellow is an example:
+
+          PRONTO_GITHUB_ACCESS_TOKEN: XXX
+          PRONTO_PULL_REQUEST_ID: "$(echo $CIRCLE_PULL_REQUEST | grep -o -E '[0-9]+')"
+          PRONTO_GITHUB_SLUG: "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
+          PRONTO_FORMAT: "%{msg} [%{runner}:%{level}]"
+          PRONTO_VERBOSE: true
+
+          Take a look in the project documentation https://github.com/prontolabs/pronto
+        MESSAGE
+
+        say message
+      end
     end
   end
 end
