@@ -14,6 +14,16 @@ module Mecha
       source_paths << File.join(File.dirname(__FILE__), 'templates')
       source_root File.join(File.dirname(__FILE__), 'templates')
 
+      def say_warking
+        message = <<-MESSAGE.strip_heredoc
+
+          Please install PostgreSQL `brew install postgres` and NodeJS `brew install nodejs`.
+
+        MESSAGE
+
+        say message
+      end
+
       protected
 
       def get_builder_class
