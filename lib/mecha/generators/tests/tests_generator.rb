@@ -2,7 +2,7 @@ require 'rails/generators'
 
 module Mecha
   module Generators
-    class TestsGenerator < Rails::Generators::Base
+    class TestsGenerator < Rails::Generators::AppBase
       source_root File.join(File.dirname(__FILE__), 'templates')
 
       def add_test_gems
