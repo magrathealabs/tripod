@@ -31,6 +31,7 @@ module Mecha
 
       def say_config_message
         message = <<-MESSAGE.strip_heredoc
+
           If you want to use Pronto in your CI, please config the needed environment variables. Bellow is an example:
 
           PRONTO_GITHUB_ACCESS_TOKEN: XXX
@@ -40,6 +41,7 @@ module Mecha
           PRONTO_VERBOSE: true
 
           Take a look in the project documentation https://github.com/prontolabs/pronto
+
         MESSAGE
 
         say message

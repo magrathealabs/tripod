@@ -77,6 +77,17 @@ class BaseGeneratorTest < Rails::Generators::TestCase
     out_file.close
   end
 
+  def create_initializers_dir
+    create_dir('config/initializers')
+  end
+
+  def create_application_layout
+    create_dir('app/views/layouts')
+    out_file = new_file('app/views/layouts/application.html.erb')
+    out_file.puts("<!DOCTYPE html>\n<html>\n  <head>\n  </head>\n  <body>\n    <%= yield %>\n  </body>\n</html>")
+    out_file.close
+  end
+
   def create_file(filepath)
     new_file(filepath).close
   end
