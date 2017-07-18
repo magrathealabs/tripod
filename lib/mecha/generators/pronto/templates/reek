@@ -2,3 +2,6 @@
 IrresponsibleModule:
   enabled: false
   exclude: []
+
+DuplicateMethodCall:
+  enabled: false

@@ -26,6 +26,10 @@ This will create a Rails app with name `<projectname>` and add all our defaults.
 
 ### Available Generators
 
+**Danger**
+
+`--danger` installs and add config for [Danger](http://danger.systems/ruby/). If SimpleCov is installed `danger-simplecov_json` gem is also installed.
+
 **Devise**
 
 `--devise` installs Devise, generates `User`, i18n files and the internationalized views for English and Brazilian Portuguese.
@@ -33,6 +37,10 @@ This will create a Rails app with name `<projectname>` and add all our defaults.
 **Bitbucket Pipelines**
 
 `--bitbucket-pipelines` generates the `bitbucket-pipelines.yml` and a special database config for it.
+
+**Pronto**
+
+`--pronto` installs and add config for [Pronto](https://github.com/prontolabs/pronto). If SimpleCov is installed `pronto-simplecov` gem is also installed.
 
 **Sentry**
 
@@ -42,12 +50,6 @@ variable with you DSN key. `ENV['DNS']`.
 **Simplecov**
 
 `--simplecov` installs Simplecov and adds configs to `test/test_helper.rb`.
-
-**Quality Control**
-
-Enables danger and pronto gems by default. If simplecov is installed danger-simplecov_json and pronto-simplecov gems are also installed.
-
-####Be sure to set up your Dangerfile to use the environment variables of your project.
 
 ## Development
 

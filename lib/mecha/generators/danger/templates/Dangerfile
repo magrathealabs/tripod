@@ -59,7 +59,7 @@ That's OK as long as you're refactoring existing code.
   warn(message.strip)
 end
 
-<% if Mecha.opts.simplecov? %>
+<% if options[:simplecov] %>
 
 # CODE COVERAGE
 
