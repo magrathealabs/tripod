@@ -1,0 +1,20 @@
+machine:
+  environment:
+    TESTOPTS: "--ci-dir=$CIRCLE_TEST_REPORTS/reports"
+<% if options[:pronto] %>
+    PRONTO_PULL_REQUEST_ID: "$(echo $CI_PULL_REQUEST | grep -o -E '[0-9]+')"
+    PRONTO_GITHUB_SLUG: "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
+    PRONTO_FORMAT: "%{msg} [%{runner}:%{level}]"
+    PRONTO_VERBOSE: true
+<% end %>
+
+test:
+  after:
+    - mkdir -p ${CIRCLE_ARTIFACTS}/reports/
+    - cp -R /home/ubuntu/${CIRCLE_PROJECT_REPONAME}/coverage/* ${CIRCLE_ARTIFACTS}/reports/
+<% if options[:pronto] %>
+    - bundle exec pronto run -f github_pr github_status -c origin/master
+<% end %>
+<% if options[:danger] %>
+    - bundle exec danger
+<% end %>
