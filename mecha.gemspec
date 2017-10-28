@@ -25,13 +25,13 @@ Gem::Specification.new do |spec|
   spec.executables   = ['mecha']
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = ">= #{Mecha::RUBY_VERSION}"
+  spec.required_ruby_version = '>= 2.3.3'
 
-  spec.add_dependency 'rails', "~> #{Mecha::RAILS_VERSION}"
+  spec.add_dependency 'rails', '~> 5.1.4'
   spec.add_dependency 'slop', '>= 4.5.0'
 
   spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'minitest'
   spec.add_development_dependency 'minitest-reporters'
+  spec.add_development_dependency 'rake'
 end
