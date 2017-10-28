@@ -15,6 +15,7 @@ require 'mecha/generators/cpf_cnpj/cpf_cnpj_generator'
 require 'mecha/generators/danger/danger_generator'
 require 'mecha/generators/pronto/pronto_generator'
 require 'mecha/generators/circleci/circleci_generator'
+require 'mecha/generators/github/github_generator'
 
 module Mecha
   def self.opts
@@ -50,6 +51,7 @@ module Mecha
 
     Mecha::Generators::AppGenerator.start
     Mecha::Generators::AssetsGenerator.start
+    Mecha::Generators::GithubGenerator.start
     Mecha::Generators::GuardGenerator.start
     Mecha::Generators::RubocopGenerator.start
     Mecha::Generators::I18nGenerator.start
