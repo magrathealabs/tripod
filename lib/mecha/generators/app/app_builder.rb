@@ -17,6 +17,11 @@ module Mecha
         template('gitignore.erb', '.gitignore')
       end
 
+      def procfile
+        template('procfile.erb', 'Procfile')
+        template('config/puma.rb.erb', 'config/puma.rb')
+      end
+
       def database_yml
         template "config/databases/#{options[:database]}.yml.erb", 'config/database.example.yml'
         template "config/databases/#{options[:database]}.yml.erb", 'config/database.yml'
