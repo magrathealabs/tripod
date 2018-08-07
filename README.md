@@ -2,7 +2,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/mecha.svg)](https://badge.fury.io/rb/mecha)
 [![Build Status](https://travis-ci.org/magrathealabs/mecha.svg?branch=master)](https://travis-ci.org/magrathealabs/mecha)
-[![Dependency Status](https://gemnasium.com/badges/github.com/magrathealabs/mecha.svg)](https://gemnasium.com/github.com/magrathealabs/mecha)
 [![Code Climate](https://codeclimate.com/github/magrathealabs/mecha/badges/gpa.svg)](https://codeclimate.com/github/magrathealabs/mecha)
 [![Test Coverage](https://codeclimate.com/github/magrathealabs/mecha/badges/coverage.svg)](https://codeclimate.com/github/magrathealabs/mecha/coverage)
 
