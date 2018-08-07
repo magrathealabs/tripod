@@ -9,8 +9,8 @@ module Mecha
       source_paths << Rails::Generators::AppGenerator.source_root << File.join(File.dirname(__FILE__), 'templates')
 
       def install_devise
-        gem('devise', '~> 4.3.0')
-        gem('devise-i18n', '~> 1.3.0')
+        gem('devise', '~> 4.4.3')
+        gem('devise-i18n', '~> 1.6.4')
         bundle_command('install')
 
         stop_spring

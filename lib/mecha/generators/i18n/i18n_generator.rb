@@ -16,7 +16,7 @@ module Mecha
       end
 
       def add_i18n_gem
-        gem 'rails-i18n', '~> 5.0.4'
+        gem 'rails-i18n', '~> 5.1.1'
       end
 
       def create_models_locales
