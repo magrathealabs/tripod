@@ -9,6 +9,10 @@ module Mecha
         template('Gemfile.erb', 'Gemfile')
       end
 
+      def ruby_version
+        template('ruby-version.erb', '.ruby-version')
+      end
+
       def gitignore
         template('gitignore.erb', '.gitignore')
       end
