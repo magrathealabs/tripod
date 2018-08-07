@@ -14,7 +14,7 @@ module Mecha
           run_generator([destination_root])
         end
 
-        assert_file "#{destination_root}/Gemfile", /gem 'devise', '~> 4.3.0'/
+        assert_file "#{destination_root}/Gemfile", /gem 'devise', '~> 4.4.3'/
         assert_file "#{destination_root}/config/environments/development.rb",
                     /config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }/
         assert_file "#{destination_root}/config/routes.rb", /\ndevise_for :users/

@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.3.3'
 
-  spec.add_dependency 'rails', '>= 5.1.4', '< 5.3.0'
+  spec.add_dependency 'rails', '>= 5.2.0', '< 5.3.0'
   spec.add_dependency 'slop', '>= 4.5.0'
 
   spec.add_development_dependency 'bundler'
